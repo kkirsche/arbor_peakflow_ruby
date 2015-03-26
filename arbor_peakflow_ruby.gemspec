@@ -5,13 +5,16 @@ require 'arbor_peakflow_ruby/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "arbor_peakflow_ruby"
-  spec.version       = ArborPeakflowRuby::VERSION
+  spec.version       = Arbor::Peakflow::VERSION
   spec.authors       = ["Kevin Kirsche"]
   spec.email         = ["kevin.kirsche@verizon.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Arbor Peakflow 6.0 API interaction gem}
+  spec.description   = %q{Provides access to the Arbor Peakflow SP 6.0 HTTPS API}
+  spec.homepage      = "https://github.com/kkirsche/arbor-peakflow-ruby"
+  spec.license       = "MIT"
+
+  spec.required_ruby_version = '>= 2.0.0'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
@@ -24,4 +27,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.9"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_runtime_dependency "faraday", "~> 0.9.1"
 end

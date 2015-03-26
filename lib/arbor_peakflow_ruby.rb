@@ -1,5 +1,7 @@
 require "arbor_peakflow_ruby/version"
 
-module ArborPeakflowRuby
+module Arbor
+  module Peakflow
   # Your code goes here...
+  end
 end
