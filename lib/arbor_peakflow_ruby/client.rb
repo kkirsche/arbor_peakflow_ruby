@@ -3,6 +3,7 @@ require 'arbor_peakflow_ruby/actions/traffic'
 require 'arbor_peakflow_ruby/actions/mitigations'
 require 'arbor_peakflow_ruby/actions/managed_object'
 require 'arbor_peakflow_ruby/actions/routers'
+require 'arbor_peakflow_ruby/actions/cp5500'
 require 'faraday'
 require 'json'
 
