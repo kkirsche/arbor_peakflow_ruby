@@ -1,6 +1,6 @@
 module Arbor
   module Peakflow
-    class Client
+    module Reports
       # Allows you to view a list of the configured wizard reports in Peakflow
       # SP
       #

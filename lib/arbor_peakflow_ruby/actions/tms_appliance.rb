@@ -1,6 +1,6 @@
 module Arbor
   module Peakflow
-    class Client
+    module TMS_Appliance
       # The TMS function allows you to view and update TMS appliance
       # configurations in JSON format.
       #

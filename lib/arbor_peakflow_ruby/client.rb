@@ -27,6 +27,16 @@ module Arbor
     #    client = Arbor::Peaklfow::Client.new host: 'http://my.arbor.device/'
     #                                         api_key: 'myApiKeyHere123'
     class Client
+      include Arbor::Peakflow::Alerts
+      include Arbor::Peakflow::CP5500
+      include Arbor::Peakflow::Managed_Object
+      include Arbor::Peakflow::Mitigations
+      include Arbor::Peakflow::Reports
+      include Arbor::Peakflow::Routers
+      include Arbor::Peakflow::TMS_Appliance
+      include Arbor::Peakflow::TMS_Ports
+      include Arbor::Peakflow::Traffic
+
       attr_reader :hosts, :api_key
       def initialize(arguments = {})
         @hosts = arguments[:hosts] || \

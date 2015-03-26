@@ -1,6 +1,6 @@
 module Arbor
   module Peakflow
-    class Client
+    module Mitigations
       # The mitigations function allows you to search for and retrieve JSON and
       # XML mitigation information.
       #

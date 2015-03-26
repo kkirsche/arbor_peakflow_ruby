@@ -1,6 +1,6 @@
 module Arbor
   module Peakflow
-    class Client
+    module Traffic
       # The traffic function allows you to search for and retrieve XML traffic
       # data.
       #

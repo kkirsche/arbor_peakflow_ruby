@@ -1,6 +1,6 @@
 module Arbor
   module Peakflow
-    class Client
+    module Alerts
       # The alerts function allows you to search for and retrieve JSON or XML
       # alert information.
       #

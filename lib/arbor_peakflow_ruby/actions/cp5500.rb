@@ -1,6 +1,6 @@
 module Arbor
   module Peakflow
-    class Client
+    module CP5500
       # The CP 5500 function allows you to view CP 5500 appliance configurations
       # in JSON format. *Note:* This function is only available with
       # appliance-based licensing for Traffic and Analysis Routing appliances

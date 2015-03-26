@@ -1,6 +1,6 @@
 module Arbor
   module Peakflow
-    class Client
+    module Managed_Object
       # The managed object function allows you to view managed object
       # configuration data in JSON format.
       #

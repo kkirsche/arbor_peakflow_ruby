@@ -1,6 +1,6 @@
 module Arbor
   module Peakflow
-    class Client
+    module Routers
       # The routers function allow syou to view router configuration in JSON
       # format.
       #
