@@ -27,6 +27,7 @@ module Arbor
     #    client = Arbor::Peaklfow::Client.new host: 'http://my.arbor.device/'
     #                                         api_key: 'myApiKeyHere123'
     class Client
+      attr_reader :hosts, :api_key
       def initialize(arguments = {})
         @hosts = arguments[:hosts] || \
                  arguments[:host]  || \
