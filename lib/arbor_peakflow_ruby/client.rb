@@ -4,6 +4,7 @@ require 'arbor_peakflow_ruby/actions/mitigations'
 require 'arbor_peakflow_ruby/actions/managed_object'
 require 'arbor_peakflow_ruby/actions/routers'
 require 'arbor_peakflow_ruby/actions/cp5500'
+require 'arbor_peakflow_ruby/actions/tms_appliance'
 require 'faraday'
 require 'json'
 
