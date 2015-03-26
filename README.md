@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Within your application, create a client. With the client, you can access then all available actions (refer to RDocs for info on these). Each response has a `.body`, `.status`, and `.headers` methods. Status returns the HTTP status code, such as 200. Body returns the response body, and Headers returns the response headers.
 
 ## Development
 
@@ -32,7 +32,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/arbor_peakflow_ruby/fork )
+1. Fork it ( https://github.com/kkirsche/arbor_peakflow_ruby/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
