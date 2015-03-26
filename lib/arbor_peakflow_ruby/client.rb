@@ -1,4 +1,11 @@
+require 'arbor_peakflow_ruby/actions/alerts'
+require 'arbor_peakflow_ruby/actions/traffic'
+require 'arbor_peakflow_ruby/actions/mitigations'
+require 'arbor_peakflow_ruby/actions/managed_object'
+require 'arbor_peakflow_ruby/actions/routers'
 require 'faraday'
+require 'json'
+
 module Arbor
   module Peakflow
     # == Client
