@@ -1,6 +1,6 @@
 require 'minitest_helper'
 module ArborPeakflowTest
-  # Test general gem requirements
+  # Test the Arbor Peakflow API Client
   class ArborPeakflowClient
     describe 'Client', 'The client used to interact with the Arbor Web Services API' do
       it 'should initialize without error' do
