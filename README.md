@@ -1,4 +1,4 @@
-[![Gem Version](https://badge.fury.io/rb/arbor_peakflow_ruby.svg)](http://badge.fury.io/rb/arbor_peakflow_ruby) [![Build Status](https://travis-ci.org/kkirsche/arbor_peakflow_ruby.svg?branch=master)](https://travis-ci.org/kkirsche/arbor_peakflow_ruby) [![Dependency Status](https://gemnasium.com/kkirsche/arbor_peakflow_ruby.svg)](https://gemnasium.com/kkirsche/arbor_peakflow_ruby)
+[![Gem Version](https://badge.fury.io/rb/arbor_peakflow_ruby.svg)](http://badge.fury.io/rb/arbor_peakflow_ruby) [![Build Status](https://travis-ci.org/kkirsche/arbor_peakflow_ruby.svg?branch=master)](https://travis-ci.org/kkirsche/arbor_peakflow_ruby) [![Dependency Status](https://gemnasium.com/kkirsche/arbor_peakflow_ruby.svg)](https://gemnasium.com/kkirsche/arbor_peakflow_ruby) [![Code Climate](https://codeclimate.com/github/kkirsche/arbor_peakflow_ruby/badges/gpa.svg)](https://codeclimate.com/github/kkirsche/arbor_peakflow_ruby) [![Test Coverage](https://codeclimate.com/github/kkirsche/arbor_peakflow_ruby/badges/coverage.svg)](https://codeclimate.com/github/kkirsche/arbor_peakflow_ruby)
 
 
 # Arbor Peakflow in Ruby
