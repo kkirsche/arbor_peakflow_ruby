@@ -30,7 +30,7 @@ module ArborPeakflowTest
         client = Arbor::Peakflow::Client.new host: 'http://test.host.com',
                                              api_key: 'myAPIKey'
         client.conn.stub :get, nil, @mock_request do
-          client.cp5500 'filter'
+          client.managed_object 'filter'
           @mock_request.verify
         end
       end
