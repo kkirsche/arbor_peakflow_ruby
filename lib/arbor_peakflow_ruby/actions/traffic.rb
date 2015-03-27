@@ -20,7 +20,7 @@ module Arbor
       # ==== Example
       #
       #    query = File.read('path/to/file.xml')
-      #    client.traffic query
+      #    response = client.traffic query
       def traffic(query, graph = nil)
         response = @conn.get do |req|
           req.url 'arborws/traffic'
@@ -32,6 +32,17 @@ module Arbor
         response
       end
 
+      # The encode_xml_for_url function allows you to encode an XML file's
+      # content. This is used automatically when calling the traffic method.
+      #
+      # == Parameters:
+      # - file_contents: The XML content which should be encoded into a URL
+      # usable format.
+      #
+      # ==== Example
+      #
+      #    file = File.read('path/to/file.xml')
+      #    encoded_file_contents = client.encode_xml_for_url file
       def encode_xml_for_url(file_contents)
         encoded_file =
           URI.encode(

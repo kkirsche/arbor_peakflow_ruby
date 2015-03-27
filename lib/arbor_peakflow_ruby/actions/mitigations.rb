@@ -1,17 +1,12 @@
 module Arbor
   module Peakflow
     module Mitigations
-      # The mitigations function allows you to search for and retrieve JSON and
-      # XML mitigation information.
+      # The mitigations function allows you to search for and retrieve JSON and XML mitigation information.
       #
       # == Parameters:
-      # - filter: (Optional) Keywords by which you want to filter search
-      # results. You can enter the same search strings that you can enter in
-      # the Search box on the Mitigations pages in the Web UI.
-      # - limit: (Optional) The maximum number of mitigations to return that
-      # match the filter.
-      # - format: The format in which you want the data returned:
-      # 'json' or 'xml'
+      # - +filter+: (Optional) Keywords by which you want to filter search results. You can enter the same search strings that you can enter in the Search box on the Mitigations pages in the Web UI.
+      # - +limit+: (Optional) The maximum number of mitigations to return that match the filter.
+      # - +format+: The format in which you want the data returned: `json` or `xml`
       #
       # ==== Example
       #

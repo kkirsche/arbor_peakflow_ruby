@@ -1,13 +1,10 @@
 module Arbor
   module Peakflow
     module Managed_Object
-      # The managed object function allows you to view managed object
-      # configuration data in JSON format.
+      # The managed object function allows you to view managed object configuration data in JSON format.
       #
       # == Parameters:
-      # - filter: (Optional) Keywords by which you want to filter search
-      # results. You can enter the same search strings that you can enter in
-      # the Search box on the Managed Objects pages in the Web UI.
+      # - +filter+: (Optional) Keywords by which you want to filter search results. You can enter the same search strings that you can enter in the Search box on the Managed Objects pages in the Web UI.
       #
       # ==== Example
       #
