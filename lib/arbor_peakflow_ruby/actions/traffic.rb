@@ -25,33 +25,29 @@ module Arbor
         response = @conn.get do |req|
           req.url 'arborws/traffic'
           req.params['api_key'] = @api_key
-          req.params['query'] = encode_xml_for_url(query)
-          req.params['graph'] = encode_xml_for_url(graph) unless graph.nil?
+          req.params['query'] = remove_returns_and_spaces(query)
+          req.params['graph'] = remove_returns_and_spaces(graph) unless graph.nil?
         end
 
         response
       end
 
-      # The encode_xml_for_url function allows you to encode an XML file's
-      # content. This is used automatically when calling the traffic method.
+      # The remove_returns_and_spaces function allows you to remove newlines and spaces that are not within tags in XML.
       #
       # == Parameters:
-      # - file_contents: The XML content which should be encoded into a URL
-      # usable format.
+      # - file_contents: The XML content which should be cleaned in preparation for URL encoding.
       #
       # ==== Example
       #
       #    file = File.read('path/to/file.xml')
-      #    encoded_file_contents = client.encode_xml_for_url file
-      def encode_xml_for_url(file_contents)
-        encoded_file =
-          URI.encode(
+      #    clean_file = client.remove_returns_and_spaces file
+      def remove_returns_and_spaces(file_contents)
+        clean_file =
             file_contents
-              .gsub!(/\n+/, '')
-              .gsub!(/(\s+)(?![^<])/, '')
-          ).gsub!(/\?/, '%3F')
+            .gsub!(/\n+/, '')
+            .gsub!(/(\s+)(?![^<])/, '')
 
-        encoded_file
+        clean_file
       end
     end
   end
