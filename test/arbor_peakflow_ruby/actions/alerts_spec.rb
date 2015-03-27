@@ -7,9 +7,9 @@ module ArborPeakflowTest
         @mock_network = Minitest::Mock.new
         @mock_network.expect(:get, id: '123456')
 
-        mock_request = Minitest::Mock.new
-        mock_request.expect(:request, true)
-        mock_request.expect(:adapter, true)
+        @mock_request = Minitest::Mock.new
+        @mock_request.expect(:request, true, [Symbol])
+        @mock_request.expect(:adapter, true, [Symbol])
 
         Faraday.stub :new, @mock_network, @mock_request do
           client = Arbor::Peakflow::Client.new host: 'http://test.host.com',
@@ -23,9 +23,9 @@ module ArborPeakflowTest
         @mock_network = Minitest::Mock.new
         @mock_network.expect(:get, id: '123456')
 
-        mock_request = Minitest::Mock.new
-        mock_request.expect(:request, true)
-        mock_request.expect(:adapter, true)
+        @mock_request = Minitest::Mock.new
+        @mock_request.expect(:request, true, [Symbol])
+        @mock_request.expect(:adapter, true, [Symbol])
 
         Faraday.stub :new, @mock_network, @mock_request do
           client = Arbor::Peakflow::Client.new host: 'http://test.host.com',
