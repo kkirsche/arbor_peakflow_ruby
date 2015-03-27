@@ -1,4 +1,5 @@
-[![Gem Version](https://badge.fury.io/rb/arbor_peakflow_ruby.svg)](http://badge.fury.io/rb/arbor_peakflow_ruby)
+[![Gem Version](https://badge.fury.io/rb/arbor_peakflow_ruby.svg)](http://badge.fury.io/rb/arbor_peakflow_ruby) [![Build Status](https://travis-ci.org/kkirsche/arbor_peakflow_ruby.svg?branch=master)](https://travis-ci.org/kkirsche/arbor_peakflow_ruby) [![Dependency Status](https://gemnasium.com/kkirsche/arbor_peakflow_ruby.svg)](https://gemnasium.com/kkirsche/arbor_peakflow_ruby)
+
 
 # Arbor Peakflow in Ruby
 
