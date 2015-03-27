@@ -17,13 +17,8 @@ module Arbor
       #
       #    response = client.configured_reports
       def configured_reports(filter = nil, limit = nil, format = 'json')
-        response = @conn.get do |req|
-          req.url 'arborws/reports/configured'
-          req.params['api_key'] = @api_key
-          set_filter_limit_format_on_req(req, filter, limit, format)
-        end
-
-        response
+        url_filter_limit_format_request('arborws/reports/configured', filter,
+                                        limit, format)
       end
 
       # Allows you to queue a wizard report to run
@@ -62,13 +57,8 @@ module Arbor
       #
       #    response = client.report_results
       def report_results(filter = nil, limit = nil, format = 'json')
-        response = @conn.get do |req|
-          req.url 'arborws/reports/results'
-          req.params['api_key'] = @api_key
-          set_filter_limit_format_on_req(req, filter, limit, format)
-        end
-
-        response
+        url_filter_limit_format_request('arborws/reports/results', filter,
+                                        limit, format)
       end
 
       # Allows you to download a completed wizard report.

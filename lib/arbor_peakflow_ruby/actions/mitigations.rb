@@ -12,13 +12,8 @@ module Arbor
       #
       #    response = client.mitigations 'auto-mitigation', 10, 'json'
       def mitigations(filter = nil, limit = nil, format = 'json')
-        response = @conn.get do |req|
-          req.url 'arborws/mitigations/status'
-          req.params['api_key'] = @api_key
-          set_filter_limit_format_on_req(req, filter, limit, format)
-        end
-
-        response
+        url_filter_limit_format_request('arborws/mitigations/status', filter,
+                                        limit, format)
       end
     end
   end

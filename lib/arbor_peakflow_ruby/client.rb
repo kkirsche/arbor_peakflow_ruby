@@ -54,10 +54,16 @@ module Arbor
         end
       end
 
-      def set_filter_limit_format_on_req(req, filter, limit, format)
-        req.params['format'] = format
-        req.params['limit'] = limit unless limit.nil?
-        req.params['filter'] = filter unless filter.nil?
+      def url_filter_limit_format_request(url, filter, limit, format)
+        response = @conn.get do |req|
+          req.url url
+          req.params['api_key'] = @api_key
+          req.params['format'] = format
+          req.params['limit'] = limit unless limit.nil?
+          req.params['filter'] = filter unless filter.nil?
+        end
+
+        response
       end
     end
   end
