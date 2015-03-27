@@ -16,9 +16,7 @@ module Arbor
         response = @conn.get do |req|
           req.url 'arborws/alerts'
           req.params['api_key'] = @api_key
-          req.params['format'] = format
-          req.params['limit'] = limit unless limit.nil?
-          req.params['filter'] = filter unless filter.nil?
+          set_filter_limit_format_on_req(req, filter, limit, format)
         end
 
         response

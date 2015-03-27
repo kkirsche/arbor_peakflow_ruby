@@ -53,6 +53,12 @@ module Arbor
           faraday.adapter Faraday.default_adapter
         end
       end
+
+      def set_filter_limit_format_on_req(req, filter, limit, format)
+        req.params['format'] = format
+        req.params['limit'] = limit unless limit.nil?
+        req.params['filter'] = filter unless filter.nil?
+      end
     end
   end
 end

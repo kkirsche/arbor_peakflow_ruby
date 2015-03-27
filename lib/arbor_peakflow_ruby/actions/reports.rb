@@ -20,9 +20,7 @@ module Arbor
         response = @conn.get do |req|
           req.url 'arborws/reports/configured'
           req.params['api_key'] = @api_key
-          req.params['format'] = format
-          req.params['filter'] = filter unless filter.nil?
-          req.params['limit'] = limit unless limit.nil?
+          set_filter_limit_format_on_req(req, filter, limit, format)
         end
 
         response
@@ -67,9 +65,7 @@ module Arbor
         response = @conn.get do |req|
           req.url 'arborws/reports/results'
           req.params['api_key'] = @api_key
-          req.params['format'] = format
-          req.params['filter'] = filter unless filter.nil?
-          req.params['limit'] = limit unless limit.nil?
+          set_filter_limit_format_on_req(req, filter, limit, format)
         end
 
         response
