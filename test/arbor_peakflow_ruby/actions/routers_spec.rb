@@ -3,7 +3,7 @@ require 'minitest_helper'
 module ArborPeakflowTest
   # Test the alerts actions
   class ArborPeakflowClient
-    describe 'Mitigations', 'The Arbor Web Services API router options' do
+    describe 'Routers', 'The Arbor Web Services API router options' do
       it 'should retrieve JSON router data' do
         @mock_network = Minitest::Mock.new
         @mock_network.expect(:get, id: '123456')
