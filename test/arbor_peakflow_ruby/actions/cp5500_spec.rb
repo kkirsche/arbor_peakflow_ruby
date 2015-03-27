@@ -20,7 +20,7 @@ module ArborPeakflowTest
         end
       end
 
-      it 'should retrieve JSON alert info with parameters' do
+      it 'should retrieve JSON CP5500 appliance info with parameters' do
         @mock_request = Minitest::Mock.new
         @mock_request.expect(:url, { url: 'arborws/admin/cp5500' }, [String])
         @mock_request.expect(:params, api_key: 'myAPIKey')
