@@ -19,6 +19,21 @@ module ArborPeakflowTest
           response.wont_be_nil
         end
       end
+
+      it 'should retrieve JSON alert info with parameters' do
+        @mock_request = Minitest::Mock.new
+        @mock_request.expect(:url, { url: 'arborws/admin/cp5500' }, [String])
+        @mock_request.expect(:params, api_key: 'myAPIKey')
+        @mock_request.expect(:params, action: 'action')
+        @mock_request.expect(:params, filter: 'filter')
+
+        client = Arbor::Peakflow::Client.new host: 'http://test.host.com',
+                                             api_key: 'myAPIKey'
+        client.conn.stub :get, nil, @mock_request do
+          client.cp5500 'action', 'filter'
+          @mock_request.verify
+        end
+      end
     end
   end
 end
