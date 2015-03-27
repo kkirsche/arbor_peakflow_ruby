@@ -16,7 +16,7 @@ module Arbor
     # The Arbor Peakflow client in charge of using Faraday to communicate with
     # the Arbor devices.
     #
-    #  == Parameters
+    # == Parameters
     # - hosts, host, urls, or url: The location of the Arbor Peakflow
     # device cluster
     # - api_key: The API key to be used when communicating with the Arbor
