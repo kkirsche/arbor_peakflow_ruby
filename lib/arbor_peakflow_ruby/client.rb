@@ -65,6 +65,17 @@ module Arbor
 
         response
       end
+
+      def url_action_filter_request(url, action, filter)
+        response = @conn.get do |req|
+          req.url url
+          req.params['api_key'] = @api_key
+          req.params['action'] = action
+          req.params['filter'] = filter unless filter.nil?
+        end
+
+        response
+      end
     end
   end
 end

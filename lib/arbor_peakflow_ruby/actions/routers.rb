@@ -15,14 +15,7 @@ module Arbor
       #
       #    response = client.routers 'show_schema'
       def routers(action, filter = nil)
-        response = @conn.get do |req|
-          req.url 'arborws/admin/routers'
-          req.params['api_key'] = @api_key
-          req.params['action'] = action
-          req.params['filter'] = filter unless filter.nil?
-        end
-
-        response
+        url_action_filter_request('arborws/admin/routers', action, filter)
       end
     end
   end

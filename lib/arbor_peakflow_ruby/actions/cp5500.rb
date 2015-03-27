@@ -11,14 +11,7 @@ module Arbor
       #
       #    response = client.cp5500 'show_schema'
       def cp5500(action, filter = nil)
-        response = @conn.get do |req|
-          req.url 'arborws/admin/cp5500'
-          req.params['api_key'] = @api_key
-          req.params['action'] = action
-          req.params['filter'] = filter unless filter.nil?
-        end
-
-        response
+        url_action_filter_request('arborws/admin/cp5500', action, filter)
       end
     end
   end
