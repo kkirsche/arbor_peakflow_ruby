@@ -20,18 +20,18 @@ module ArborPeakflowTest
       end
 
       it 'should retrieve JSON alert info with parameters' do
-        @mock_network = Minitest::Mock.new
-        @mock_network.expect(:get, id: '123456')
-
         @mock_request = Minitest::Mock.new
-        @mock_request.expect(:request, true, [Symbol])
-        @mock_request.expect(:adapter, true, [Symbol])
+        @mock_request.expect(:url, { url: 'arborws/alerts' }, [String])
+        @mock_request.expect(:params, api_key: 'myAPIKey')
+        @mock_request.expect(:params, filter: 'host')
+        @mock_request.expect(:params, limit: 100)
+        @mock_request.expect(:params, format: 'json')
 
-        Faraday.stub :new, @mock_network, @mock_request do
-          client = Arbor::Peakflow::Client.new host: 'http://test.host.com',
-                                               api_key: 'myAPIKey'
-          response = client.alerts 'host', 100, 'json'
-          response.wont_be_nil
+        client = Arbor::Peakflow::Client.new host: 'http://test.host.com',
+                                             api_key: 'myAPIKey'
+        client.conn.stub :get, nil, @mock_request do
+          client.alerts 'host', 100, 'json'
+          @mock_request.verify
         end
       end
     end

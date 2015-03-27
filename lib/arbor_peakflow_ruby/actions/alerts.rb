@@ -17,8 +17,8 @@ module Arbor
           req.url 'arborws/alerts'
           req.params['api_key'] = @api_key
           req.params['format'] = format
-          req.params['filter'] = filter unless filter.nil?
           req.params['limit'] = limit unless limit.nil?
+          req.params['filter'] = filter unless filter.nil?
         end
 
         response

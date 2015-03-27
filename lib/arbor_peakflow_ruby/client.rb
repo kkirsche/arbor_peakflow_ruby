@@ -37,7 +37,7 @@ module Arbor
       include Arbor::Peakflow::TMS_Ports
       include Arbor::Peakflow::Traffic
 
-      attr_reader :hosts, :api_key
+      attr_reader :hosts, :api_key, :conn
       def initialize(arguments = {})
         @hosts = arguments[:hosts] || \
                  arguments[:host]  || \
