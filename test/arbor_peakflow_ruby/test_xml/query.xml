@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<peakflow version="2.0">
+  <query type="traffic">
+    <time start_ascii="24 hours ago" end_ascii="now"/>
+    <unit type="bps"/>
+    <search limit="100" timeout="30"/>
+    <class type="in"/>
+    <class type="out"/>
+    <filter type="customer">
+      <instance name="CustomerName"/>
+    </filter>
+    <filter type="application" binby="1"/>
+  </query>
+</peakflow>

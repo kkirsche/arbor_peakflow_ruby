@@ -1,5 +1,6 @@
 module Arbor
   module Peakflow
+    # The Traffic module is for getting traffic data.
     module Traffic
       # The traffic function allows you to search for and retrieve XML traffic
       # data.
@@ -15,15 +16,31 @@ module Arbor
       # want Peakflow SP to return a binary PNG graph file of the queried
       # traffic data. If you do not specify a graph argument, then Peakflow SP
       # returns XML.
+      #
+      # ==== Example
+      #
+      #    query = File.read('path/to/file.xml')
+      #    client.traffic query
       def traffic(query, graph = nil)
         response = @conn.get do |req|
           req.url 'arborws/traffic'
           req.params['api_key'] = @api_key
-          req.params['query'] = query
-          req.params['graph'] = graph unless graph.nil?
+          req.params['query'] = encode_xml_for_url(query)
+          req.params['graph'] = encode_xml_for_url(graph) unless graph.nil?
         end
 
         response
+      end
+
+      def encode_xml_for_url(file_contents)
+        encoded_file =
+          URI.encode(
+            file_contents
+              .gsub!(/\n+/, '')
+              .gsub!(/(\s+)(?![^<])/, '')
+          ).gsub!(/\?/, '%3F')
+
+        encoded_file
       end
     end
   end
