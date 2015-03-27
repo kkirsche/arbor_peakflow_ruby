@@ -1,8 +1,8 @@
-# ArborPeakflowRuby
+[![Gem Version](https://badge.fury.io/rb/arbor_peakflow_ruby.svg)](http://badge.fury.io/rb/arbor_peakflow_ruby)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/arbor_peakflow_ruby`. To experiment with that code, run `bin/console` for an interactive prompt.
+# Arbor Peakflow in Ruby
 
-TODO: Delete this and the text above, and describe your gem
+Welcome to Arbor Peakflow! In this library you will find the tools you need as a user and as a developer to interact with the Arbor Networks Peakflow Web Services API 6.0. Hope you enjoy!
 
 ## Installation
 

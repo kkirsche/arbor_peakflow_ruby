@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Arbor Peakflow 6.0 API interaction gem}
   spec.description   = %q{Provides access to the Arbor Peakflow SP 6.0 HTTPS API}
-  spec.homepage      = "https://github.com/kkirsche/arbor-peakflow-ruby"
+  spec.homepage      = "https://github.com/kkirsche/arbor_peakflow_ruby"
   spec.license       = "MIT"
 
   spec.required_ruby_version = '>= 2.0.0'
@@ -20,8 +20,4 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
-
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
-  end
 end
