@@ -24,7 +24,7 @@ module Arbor
     #
     # ==== Example
     #
-    #    client = Arbor::Peaklfow::Client.new host: 'http://my.arbor.device/'
+    #    client = Arbor::Peakflow::Client.new host: 'http://my.arbor.device/',
     #                                         api_key: 'myApiKeyHere123'
     class Client
       include Arbor::Peakflow::Alerts
