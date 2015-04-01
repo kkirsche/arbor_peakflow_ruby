@@ -13,7 +13,7 @@ require 'json'
 module Arbor
   module Peakflow
     # == Client
-    # The Arbor Peakflow client in charge of using Faraday to communicate with
+    # The Arbor Peakflow client in charge of using Hurley to communicate with
     # the Arbor devices.
     #
     # == Parameters
