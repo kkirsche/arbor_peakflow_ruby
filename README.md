@@ -23,7 +23,7 @@ Or install it yourself as:
 
 ## Usage
 
-Within your application, create a client. With the client, you can access then all available actions (refer to RDocs for info on these). Each response has a `.body`, `.status`, and `.headers` methods. Status returns the HTTP status code, such as 200. Body returns the response body, and Headers returns the response headers.
+Within your application, create a client. With the client, you can access then all available actions (refer to RDocs for info on these). Each response has a `.body`, `.status_code`, `.header`, and `.request` methods. Status returns the HTTP status code, such as 200. Body returns the response body, and Headers returns the response headers.
 
 ## Development
 
