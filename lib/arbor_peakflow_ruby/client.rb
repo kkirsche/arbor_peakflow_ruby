@@ -47,7 +47,7 @@ module Arbor
                       false
 
         @ca_path = arguments[:ca_path]  || \
-                   `openssl version -d`.split(/"/)[1]
+                   `openssl version -d`.split(/"/)[1] + '/certs'
 
         @ssl_version = arguments[:ssl_version]  || \
                        'SSLv23'
