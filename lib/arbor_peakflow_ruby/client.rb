@@ -44,7 +44,6 @@ module Arbor
       attr_accessor :client
       attr_reader :hosts, :api_key
       def initialize(arguments = {})
-
         @hosts = arguments[:hosts] || \
                  arguments[:host]  || \
                  arguments[:url]   || \
