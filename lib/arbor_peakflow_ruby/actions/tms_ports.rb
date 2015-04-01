@@ -8,10 +8,9 @@ module Arbor
       #
       #    response = client.tms_ports
       def tms_ports
-        response = @conn.get do |req|
-          req.url 'arborws/admin/tms_ports'
-          req.params['api_key'] = @api_key
-        end
+        response = @client.get('arborws/admin/tms_ports', api_key: @api_key)
+
+        response.body = JSON.parse(response.body)
 
         response
       end

@@ -12,8 +12,8 @@ module Arbor
       #
       #    response = client.mitigations 'auto-mitigation', 10, 'json'
       def mitigations(filter = nil, limit = nil, format = 'json')
-        url_filter_limit_format_request('arborws/mitigations/status', filter,
-                                        limit, format)
+        url_filter_limit_format_request('arborws/mitigations/status',
+                                        filter, limit, format)
       end
     end
   end

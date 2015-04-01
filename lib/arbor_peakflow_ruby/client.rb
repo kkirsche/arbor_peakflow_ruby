@@ -7,7 +7,7 @@ require 'arbor_peakflow_ruby/actions/routers'
 require 'arbor_peakflow_ruby/actions/tms_appliance'
 require 'arbor_peakflow_ruby/actions/tms_ports'
 require 'arbor_peakflow_ruby/actions/traffic'
-require 'faraday'
+require 'hurley'
 require 'json'
 
 module Arbor
@@ -41,7 +41,8 @@ module Arbor
       include Arbor::Peakflow::TMS_Ports
       include Arbor::Peakflow::Traffic
 
-      attr_reader :hosts, :api_key, :conn
+      attr_accessor :client
+      attr_reader :hosts, :api_key
       def initialize(arguments = {})
         @ssl_verify = arguments[:ssl_verify] || \
                       false
@@ -60,36 +61,33 @@ module Arbor
 
         @api_key ||= arguments[:api_key]
 
-        @conn = Faraday.new(@hosts, ssl:
-          { verify: @ssl_verify,
-            version: @ssl_version,
-            ca_path: @ca_path
-          }) do |faraday|
-          faraday.request :url_encoded
-          # faraday.response :logger
-          faraday.adapter Faraday.default_adapter
-        end
+        @client = Hurley::Client.new @hosts
+        @client.ssl_options.skip_verification = !@ssl_verify
+        @client.ssl_options.ca_path = @ca_path
+        @client.ssl_options.version = @ssl_version
       end
 
       def url_filter_limit_format_request(url, filter, limit, format)
-        response = @conn.get do |req|
-          req.url url
-          req.params['api_key'] = @api_key
-          req.params['format'] = format
-          req.params['limit'] = limit unless limit.nil?
-          req.params['filter'] = filter unless filter.nil?
-        end
+        response = @client.get(url,
+                               {}.tap do |hash|
+                                 hash[:api_key] = @api_key
+                                 hash[:format] = format unless format.nil?
+                                 hash[:limit] = limit unless limit.nil?
+                                 hash[:filter] = filter unless filter.nil?
+                               end)
+
+        response.body = JSON.parse(response.body) if format == 'json'
 
         response
       end
 
       def url_action_filter_request(url, action, filter)
-        response = @conn.get do |req|
-          req.url url
-          req.params['api_key'] = @api_key
-          req.params['action'] = action
-          req.params['filter'] = filter unless filter.nil?
-        end
+        response = @client.get(url,
+                               {}.tap do |hash|
+                                 hash[:api_key] = @api_key
+                                 hash[:action] = action unless action.nil?
+                                 hash[:filter] = filter unless filter.nil?
+                               end)
 
         response
       end

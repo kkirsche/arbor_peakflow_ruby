@@ -32,11 +32,8 @@ module Arbor
       #
       #    response = client.queue_report 'example_report'
       def queue_report(name)
-        response = @conn.get do |req|
-          req.url 'arborws/reports/queue'
-          req.params['api_key'] = @api_key
-          req.params['name'] = name
-        end
+        response = @client.get('arborws/reports/queue', api_key: @api_key,
+                                                        name: name)
 
         response
       end
@@ -78,13 +75,9 @@ module Arbor
       #
       #    response = client.download_report 'myReport', 'last', 'PDF'
       def download_report(name, request_time, format)
-        response = @conn.get do |req|
-          req.url 'arborws/reports/configured'
-          req.params['api_key'] = @api_key
-          req.params['name'] = name
-          req.params['request_time'] = request_time
-          req.params['format'] = format
-        end
+        response = @client.get('arborws/reports/configured',
+                               api_key: @api_key, name: name,
+                               request_time: request_time, format: format)
 
         response
       end

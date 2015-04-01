@@ -22,12 +22,15 @@ module Arbor
       #    query = File.read('path/to/file.xml')
       #    response = client.traffic query
       def traffic(query, graph = nil)
-        response = @conn.get do |req|
-          req.url 'arborws/traffic'
-          req.params['api_key'] = @api_key
-          req.params['query'] = remove_returns_and_spaces(query)
-          req.params['graph'] = remove_returns_and_spaces(graph) unless graph.nil?
-        end
+        query = remove_returns_and_spaces(query) unless query.nil?
+        graph = remove_returns_and_spaces(graph) unless graph.nil?
+
+        response = @client.get('arborws/traffic',
+                               {}.tap do |hash|
+                                 hash[:api_key] = @api_key
+                                 hash[:query] =  query unless query.nil?
+                                 hash[:graph] = graph unless graph.nil?
+                               end)
 
         response
       end

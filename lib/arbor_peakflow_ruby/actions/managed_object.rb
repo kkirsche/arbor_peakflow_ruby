@@ -10,11 +10,13 @@ module Arbor
       #
       #    response = client.managed_object 'dorms'
       def managed_object(filter = nil)
-        response = @conn.get do |req|
-          req.url 'arborws/admin/managed_object'
-          req.params['api_key'] = @api_key
-          req.params['filter'] = filter unless filter.nil?
-        end
+        response = @client.get('arborws/admin/managed_object',
+                               {}.tap do |hash|
+                                 hash[:api_key] = @api_key
+                                 hash[:filter] = filter unless filter.nil?
+                               end)
+
+        response.body = JSON.parse(response.body)
 
         response
       end
