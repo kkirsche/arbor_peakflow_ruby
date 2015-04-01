@@ -14,7 +14,7 @@ module ArborPeakflowTest
           end
         end
 
-        response = client.routers 'action', 'filter'
+        response = client.tms_appliance 'action', 'filter'
         response.wont_be_nil
       end
     end
