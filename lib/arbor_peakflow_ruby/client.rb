@@ -44,14 +44,6 @@ module Arbor
       attr_accessor :client
       attr_reader :hosts, :api_key
       def initialize(arguments = {})
-        @ssl_verify = arguments[:ssl_verify] || \
-                      false
-
-        @ca_path = arguments[:ca_path]  || \
-                   `openssl version -d`.split(/"/)[1] + '/certs'
-
-        @ssl_version = arguments[:ssl_version]  || \
-                       'SSLv23'
 
         @hosts = arguments[:hosts] || \
                  arguments[:host]  || \
@@ -62,6 +54,19 @@ module Arbor
         @api_key ||= arguments[:api_key]
 
         @client = Hurley::Client.new @hosts
+        ssl(arguments)
+      end
+
+      def ssl(arguments)
+        @ssl_verify = arguments[:ssl_verify] || \
+                      false
+
+        @ca_path = arguments[:ca_path]  || \
+                   `openssl version -d`.split(/"/)[1] + '/certs'
+
+        @ssl_version = arguments[:ssl_version]  || \
+                       'SSLv23'
+
         @client.ssl_options.skip_verification = !@ssl_verify
         @client.ssl_options.ca_path = @ca_path
         @client.ssl_options.version = @ssl_version
