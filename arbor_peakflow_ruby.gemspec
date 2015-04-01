@@ -21,9 +21,9 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency 'bundler'
-  spec.add_development_dependency 'rake'
-  spec.add_development_dependency 'minitest'
-  spec.add_development_dependency 'codeclimate-test-reporter'
-  spec.add_runtime_dependency 'hurley'
+  spec.add_development_dependency 'bundler', '~> 1.9'
+  spec.add_development_dependency 'rake', '~> 10.4'
+  spec.add_development_dependency 'minitest', '~> 5.5'
+  spec.add_development_dependency 'codeclimate-test-reporter', '~> 0.4'
+  spec.add_runtime_dependency 'hurley', '~> 0.1'
 end
