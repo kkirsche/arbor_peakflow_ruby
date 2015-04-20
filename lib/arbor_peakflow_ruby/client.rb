@@ -45,9 +45,9 @@ module Arbor
       attr_reader :hosts, :api_key
       def initialize(arguments = {})
         @hosts = arguments[:hosts] || \
-                 arguments[:host]  || \
-                 arguments[:url]   || \
-                 arguments[:urls]  || \
+                 arguments[:host] || \
+                 arguments[:url] || \
+                 arguments[:urls] || \
                  ENV.fetch('PEAKFLOW_URL')
 
         @api_key ||= arguments[:api_key]
@@ -60,10 +60,10 @@ module Arbor
         @ssl_verify = arguments[:ssl_verify] || \
                       false
 
-        @ca_path = arguments[:ca_path]  || \
+        @ca_path = arguments[:ca_path] || \
                    `openssl version -d`.split(/"/)[1] + '/certs'
 
-        @ssl_version = arguments[:ssl_version]  || \
+        @ssl_version = arguments[:ssl_version] || \
                        'SSLv23'
 
         @client.ssl_options.skip_verification = !@ssl_verify
