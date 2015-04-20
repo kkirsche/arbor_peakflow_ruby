@@ -15,7 +15,7 @@ module ArborPeakflowTest
         end
 
         response = client.cp5500 'action', 'filter'
-        response.wont_be_nil
+        expect(response).wont_be_nil
       end
     end
   end

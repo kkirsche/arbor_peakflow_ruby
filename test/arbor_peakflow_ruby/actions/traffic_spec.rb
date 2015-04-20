@@ -32,7 +32,7 @@ module ArborPeakflowTest
         )
 
         response = client.traffic query_data
-        response.wont_be_nil
+        expect(response).wont_be_nil
       end
     end
   end

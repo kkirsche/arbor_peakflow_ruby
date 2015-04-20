@@ -15,7 +15,7 @@ module ArborPeakflowTest
         end
 
         response = client.mitigations 'filter', 100, 'json'
-        response.wont_be_nil
+        expect(response).wont_be_nil
       end
     end
   end

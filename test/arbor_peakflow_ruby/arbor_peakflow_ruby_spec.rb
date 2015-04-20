@@ -4,7 +4,7 @@ module ArborPeakflowTest
   class ArborPeakflow
     describe 'ArborPeakflowRuby', 'General gem tests' do
       it 'should have a version number' do
-        Arbor::Peakflow::VERSION.wont_be_nil
+        expect(Arbor::Peakflow::VERSION).wont_be_nil
       end
     end
   end

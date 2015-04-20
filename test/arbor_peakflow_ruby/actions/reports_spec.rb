@@ -15,7 +15,7 @@ module ArborPeakflowTest
         end
 
         response = client.configured_reports 'filter', 100, 'json'
-        response.wont_be_nil
+        expect(response).wont_be_nil
       end
 
       it 'should queue report data' do
@@ -29,7 +29,7 @@ module ArborPeakflowTest
         end
 
         response = client.queue_report 'name'
-        response.wont_be_nil
+        expect(response).wont_be_nil
       end
 
       it 'should retrieve JSON report results data' do
@@ -43,7 +43,7 @@ module ArborPeakflowTest
         end
 
         response = client.report_results 'filter', 100, 'json'
-        response.wont_be_nil
+        expect(response).wont_be_nil
       end
 
       it 'should retrieve JSON report results data' do
@@ -57,7 +57,7 @@ module ArborPeakflowTest
         end
 
         response = client.download_report 'name', 'request_time', 'pdf'
-        response.wont_be_nil
+        expect(response).wont_be_nil
       end
     end
   end
